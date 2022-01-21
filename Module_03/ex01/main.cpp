@@ -1,14 +1,21 @@
 #include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
+int	main(void){
+	ScavTrap ScavTrap("GGG");
+	// ClapTrap	ClapTrap("George");
 
-int main(void)
-{
-	ClapTrap ClapTrapper("Sura");
-	ScavTrap ScavTrapper("Warrior");
+	// ClapTrap.attack("Canelos");
+	// ClapTrap.takeDamage(5);
+	// ClapTrap.beRepaired(2);
+	// ClapTrap.attack("Canelos");
+	// ClapTrap.takeDamage(5);
+	// ClapTrap.attack("Canelos");
 
-	ClapTrapper.attack("wolves");	
-	ScavTrapper.takeDamage(5);
-	ScavTrapper.beRepaired(3);
-
-	ScavTrapper.guardGate();
+	ScavTrap.attack("Floyd");
+	ScavTrap.takeDamage(5);
+	ScavTrap.attack("Floyd");
+	ScavTrap.beRepaired(2);
+	ScavTrap.guardGate();
+	
+	return (0);
 }

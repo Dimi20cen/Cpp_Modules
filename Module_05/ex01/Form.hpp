@@ -9,14 +9,16 @@ class Bureaucrat;
 class Form
 {
 private:
-	std::string name;
-	bool is_signed;
-	int grade_to_sign;
-	int grade_to_exe;
+	std::string const	name;
+	bool	 			is_signed;
+	int const			grade_to_sign;
+	int const			grade_to_exe;
 public:
+	Form();
 	Form(std::string given_name, int g_grade_to_sign, int g_grade_to_exe);
 	Form(const Form &given);
 	~Form();
+	Form &operator=(Form const &rhs);
 
 	class GradeTooHighException : public std::exception
 	{};

@@ -22,7 +22,7 @@ int main(){
 		
 		rand.addNumber(42);// should throw exception, it tries to add past the N
 	}
-	catch (std::exception & e){
+	catch (std::exception){
 		std::cout << "exception thrown OH NOOO!" << std::endl;
 	}
 }

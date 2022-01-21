@@ -1,36 +1,41 @@
 #include "Form.hpp"
 
-Form::Form(std::string given_name, int g_grade_to_sign, int g_grade_to_exe)
+Form::Form() : name("Default"), is_signed(false), grade_to_sign(150), grade_to_exe(150){}
+
+Form::Form(std::string given_name, int g_grade_to_sign, int g_grade_to_exe) : name(given_name), grade_to_sign(g_grade_to_sign), grade_to_exe(g_grade_to_exe)
 {
-	name = given_name;
 	is_signed = 0;
 
 	if (g_grade_to_sign > 150)
 		throw GradeTooLowException();
 	else if (g_grade_to_sign < 1)
 		throw GradeTooHighException();
-	else
-		grade_to_sign = g_grade_to_sign;
 
 	if (g_grade_to_exe > 150)
 		throw GradeTooLowException();
 	else if (g_grade_to_exe < 1)
 		throw GradeTooHighException();
-	else
-		grade_to_exe = g_grade_to_exe;
 
-	// std::cout << "Form created" << std::endl;
+	std::cout << "Form created" << std::endl;
 }
 
-Form::Form(const Form &given)
+Form::Form(const Form &given) :  name(given.getName()), is_signed(given.getSigned()), grade_to_sign(given.getGrade_to_sign()), grade_to_exe(given.getGrade_to_exe())
 {
-	*this = given;
-	// std::cout << "copy Form created" << std::endl;
+	std::cout << "copy Form created" << std::endl;
 }
 
 Form::~Form()
 {
-	// std::cout << "Form is burned" << std::endl;
+	std::cout << "Form is burned" << std::endl;
+}
+
+Form &Form::operator=(Form const &rhs)
+{
+	// this->name = rhs.getName();
+	// this->grade_to_exe = rhs.getGrade_to_exe();
+	// this->grade_to_sign = rhs.getGrade_to_sign();
+	this->is_signed = rhs.getSigned();
+	return *this;
 }
 
 std::string Form::getName(void) const
@@ -66,6 +71,6 @@ void Form::beSigned(Bureaucrat &burea)
 
 std::ostream &operator << (std::ostream &left_op, Form &right_op)
 {
-	left_op << "name: " << right_op.getName() << " is_signed: " << right_op.getSigned() << " Grade_to_sign: " << right_op.getGrade_to_sign() << " grade to exec: " << right_op.getGrade_to_exe() << std::endl;
+	left_op << "Name of form: " << right_op.getName() << ", is_signed: " << right_op.getSigned() << ", grade_to_sign: " << right_op.getGrade_to_sign() << ", grade to exec: " << right_op.getGrade_to_exe() << std::endl;
 	return (left_op);
 }

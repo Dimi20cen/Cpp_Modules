@@ -1,9 +1,9 @@
 #include "Dog.hpp"
 
 Dog::Dog(){
+	std::cout << "A dog created" << std::endl;
 	type = "Dog";
 	dog_brain = new Brain();
-	std::cout << "A dog created" << std::endl;
 }
 
 Dog::Dog(const Dog& old){

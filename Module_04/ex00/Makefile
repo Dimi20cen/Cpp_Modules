@@ -9,7 +9,7 @@ RM  = rm -f
 FLAGS = -Wall -Wextra -Werror
 
 all: $(NAME)
-$(NAME): Animal.hpp Dog.hpp Cat.hpp WrongAnimal.hpp WrongCat.hpp
+$(NAME): $(SRCS) Animal.hpp Dog.hpp Cat.hpp WrongAnimal.hpp WrongCat.hpp
 	$(CXX) $(FLAGS) $(SRCS) -o $(NAME)
 
 clean:

@@ -5,8 +5,8 @@ Fixed::Fixed(void) : value(0){
 }
 
 Fixed::Fixed(const Fixed &toCopy){
-	this->value = toCopy.value;
 	std::cout << "Copy constructor called" << std::endl;
+	this->value = toCopy.getRawBits();
 }
 
 Fixed::~Fixed(void)
@@ -15,8 +15,8 @@ Fixed::~Fixed(void)
 }
 
 void Fixed::operator = (const Fixed &toCopyFrom){
-	this->value = toCopyFrom.value;
 	std::cout << "Assignation operator called" << std::endl;
+	this->value = toCopyFrom.getRawBits();
 }
 
 int Fixed::getRawBits(void) const{

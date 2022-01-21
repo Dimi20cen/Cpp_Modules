@@ -1,14 +1,14 @@
-#ifndef SCAVTRAP_H
-# define SCAVTRAP_H
+#ifndef SCAVTRAP_HPP
+# define SCAVTRAP_HPP
 
 #include "ClapTrap.hpp"
 
-class ScavTrap : public ClapTrap
-{
-public:
-	ScavTrap(std::string given_name);
+class ScavTrap : public ClapTrap{
+public :
+	ScavTrap(std::string _name);
 	~ScavTrap();
-	void guardGate(); 
+void	attack(std::string const &target);
+void			guardGate(void);
 };
 
 #endif

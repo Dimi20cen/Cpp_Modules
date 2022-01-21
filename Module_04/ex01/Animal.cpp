@@ -5,8 +5,8 @@ Animal::Animal(){
 }
 
 Animal::Animal(const Animal& old){
-	*this = old;
 	std::cout << "An animal created" << std::endl;
+	*this = old;
 }
 
 Animal::~Animal(){

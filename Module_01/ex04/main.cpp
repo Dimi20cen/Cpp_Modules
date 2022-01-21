@@ -13,13 +13,15 @@ int main(int argc, char **argv)
 	if (argc != 4)
 	{
 		std::cout << "You need to give 3 arguments!" << std::endl;
-		exit(EXIT_FAILURE);
+		return 1;
+		// exit(EXIT_FAILURE);
 	}
 	infile.open(argv[1]);
 	if (!(infile.is_open()))
 	{
 		std::cout << "Error opening file\n";
-		exit(EXIT_FAILURE);
+		return 1;
+		// exit(EXIT_FAILURE);
 	}
 
 	new_file.append(argv[1]).append(".replace");
@@ -29,18 +31,20 @@ int main(int argc, char **argv)
 		infile.close();
 		std::cout << "Error opening new file\n";
 
-		exit(EXIT_FAILURE);
+		// exit(EXIT_FAILURE);
+		return 1;
 	}
 	//putting the file's content inside the string, string_from_file
 	std::ostringstream buffer;
 	buffer << infile.rdbuf();
 	string_from_file = buffer.str();
-	std::cout << string_from_file << std::endl;
+	// std::cout << string_from_file << std::endl;
 	
 	//replacing s1 with s2
 	size_t i;
 	int	s1_length = ((std::string)argv[2]).length();
 	i = string_from_file.find(argv[2], 0);
+	//std::string::npos, means until the end of the string
 	while (i != std::string::npos)
 	{
 		string_from_file.erase(i, s1_length);

@@ -3,12 +3,11 @@
 
 #include "ClapTrap.hpp"
 
-class FragTrap : public ClapTrap
-{
-public:
-	FragTrap(std::string given_name);
+class FragTrap : public ClapTrap{
+public :
+	FragTrap(std::string _name);
 	~FragTrap();
-	void highFivesGuys(void);
+void	highFivesGuys(void);
 };
 
 #endif

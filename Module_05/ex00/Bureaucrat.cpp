@@ -1,8 +1,9 @@
 #include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat(std::string given_name, int given_grade)
+Bureaucrat::Bureaucrat() : name("Default"), grade(150){}
+
+Bureaucrat::Bureaucrat(std::string given_name, int given_grade) : name(given_name)
 {
-	name = given_name;
 	if (given_grade > 150)
 		throw GradeTooLowException();
 	else if (given_grade < 1)
@@ -21,6 +22,12 @@ Bureaucrat::Bureaucrat(const Bureaucrat &given)
 Bureaucrat::~Bureaucrat()
 {
 	std::cout << "grandpa Bureaucrat died" << std::endl;
+}
+
+Bureaucrat &Bureaucrat::operator=(Bureaucrat const &rhs)
+{
+	this->grade = rhs.getGrade();
+	return *this;
 }
 
 std::string Bureaucrat::getName(void) const

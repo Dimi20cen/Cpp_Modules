@@ -6,9 +6,3 @@ Zombie	*newZombie(std::string Z_name)
 
 	return heap_Zombie;
 }
-
-void	randomChump(std::string Z_name)
-{
-	Zombie	stackZombie(Z_name);
-	stackZombie.announce();
-}

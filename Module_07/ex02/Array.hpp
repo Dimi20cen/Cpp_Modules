@@ -43,7 +43,6 @@ public:
 	{
 		return tab_size;
 	}
-
 };
 
 #endif

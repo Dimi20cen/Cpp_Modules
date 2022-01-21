@@ -1,11 +1,13 @@
 #include "ClapTrap.hpp"
 
-int main(void)
-{
-	ClapTrap Trapper1("Sura");
-	ClapTrap Trapper2("Warrior");
+int	main(void){
+	ClapTrap	ClapTrap("George");
 
-	Trapper1.attack("wolves");	
-	Trapper2.takeDamage(5);
-	Trapper2.beRepaired(3);
+	ClapTrap.attack("Canelos");
+	ClapTrap.takeDamage(5);
+	ClapTrap.beRepaired(2);
+	ClapTrap.attack("Canelos");
+	ClapTrap.takeDamage(5);
+	ClapTrap.attack("Canelos");
+	return (0);
 }

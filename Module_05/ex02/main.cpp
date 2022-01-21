@@ -12,7 +12,7 @@ int	main(){
 
 		Bureaucrat Mari = Bureaucrat("Mari", 1);
 		Bureaucrat Alex = Bureaucrat("Alex", 7);
-		Bureaucrat Glover = Bureaucrat("Glover", 130);
+		Bureaucrat Glover = Bureaucrat("Glover", 1);
 
 		std::cout << "\n";
 		rf.beSigned(Mari);

@@ -16,12 +16,12 @@ int	main(void){
 		Array<int> copiedArray(BigArray);
 
 		std::cout << "Number of elements in the copiedArray : " << copiedArray.size() << std::endl;
-		std::cout << "copiedArray[3] = " << copiedArray[3] << std::endl;
 
-		zeroArray[0] = 21;//causing the exception
+		BigArray[-1] = 21;//causing the exception
+		std::cout << "BigArray[3] = " << BigArray[3] << std::endl;
+		std::cout << "copiedArray[3] = " << copiedArray[3] << std::endl;
 	}
-	catch (std::exception & e){
+	catch (std::exception){
 		std::cout << "yo index you chose doesnt exist :(" << std::endl;
 	}
-
 }

@@ -1,14 +1,14 @@
 #include "Cat.hpp"
 
 Cat::Cat(){
+	std::cout << "A cat just created" << std::endl;
 	cat_brain = new Brain();
 	type = "Cat";
-	std::cout << "A cat just created" << std::endl;
 }
 
 Cat::Cat(const Cat& old){
-	*this = old;
 	std::cout << "A cat just created" << std::endl;
+	*this = old;
 }
 
 Cat::~Cat(){

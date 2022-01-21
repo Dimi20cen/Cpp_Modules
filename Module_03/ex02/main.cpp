@@ -2,14 +2,13 @@
 #include "ScavTrap.hpp"
 #include "FragTrap.hpp"
 
-int main(void)
-{
-	ClapTrap ClapTrapper("Sura");
-	FragTrap FragTrapper("Fragger");
+int	main(void){
+	FragTrap	FragTrap("Conor");
 
-	FragTrapper.attack("wolves");	
-	FragTrapper.takeDamage(5);
-	FragTrapper.beRepaired(3);
+	FragTrap.highFivesGuys();
+	FragTrap.attack("DDD");
+	FragTrap.takeDamage(3);
+	FragTrap.takeDamage(42);
 
-	FragTrapper.highFivesGuys();
+	return (0);
 }

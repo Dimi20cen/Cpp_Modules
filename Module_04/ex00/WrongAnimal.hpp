@@ -11,7 +11,7 @@ std::string	type;
 public:
 	WrongAnimal();
 	WrongAnimal(const WrongAnimal& old);
-	~WrongAnimal();
+	virtual	~WrongAnimal();
 void	makeSound(void) const;
 WrongAnimal		&operator=(const WrongAnimal &right_op);
 };

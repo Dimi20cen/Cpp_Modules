@@ -10,9 +10,9 @@ int	main(){
 		tab.push_back(9);//now vector contains 2 2 2 2 6 9
 
 		easyfind(tab, 2);
-		easyfind(tab, 6);
+		easyfind(tab, 1);
 	}
-	catch (std::exception & e){
+	catch (std::exception){
 		std::cout << "Oh no, the element is not in the array !" << std::endl;
 	}
 }

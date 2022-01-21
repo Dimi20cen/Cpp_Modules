@@ -7,9 +7,6 @@ int main(int argc, char **argv)
 
 	if (argc == 2)
 	{
-		if ((std::string)argv[1] == "DEBUG" || (std::string)argv[1] == "INFO" || (std::string)argv[1] == "WARNING" || (std::string)argv[1] == "ERROR")
-			std::cout << "[ " << argv[1] << " ]" << std::endl;
-
 		if ((std::string)argv[1] == "DEBUG")
 			level = 1;
 		else if ((std::string)argv[1] == "INFO")
@@ -24,12 +21,16 @@ int main(int argc, char **argv)
 		switch (level)
 		{
 		case 1:
+			std::cout << "[ " << "DEBUG" << " ]" << std::endl;
 			Karen.complain("DEBUG");
 		case 2:
+			std::cout << "[ " << "INFO" << " ]" << std::endl;
 			Karen.complain("INFO");
 		case 3:
+			std::cout << "[ " << "WARNING" << " ]" << std::endl;
 			Karen.complain("WARNING");
 		case 4:
+			std::cout << "[ " << "ERROR" << " ]" << std::endl;
 			Karen.complain("ERROR");
 			break;
 		default:

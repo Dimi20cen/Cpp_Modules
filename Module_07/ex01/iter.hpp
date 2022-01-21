@@ -4,11 +4,11 @@
 #include <iostream>
 
 template<typename T>
-void	increaseTab(T & x){
+void	increaseTab(T &x){
 	x++;
 }
 template<typename T>
-void	printTab(T & x){
+void	printTab(T &x){
 	std::cout << x << std::endl;
 }
 

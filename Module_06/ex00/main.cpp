@@ -48,8 +48,13 @@ bool is_okay(std::string str)
 			return 0;
 		i++;
 	}
+	// it's float
 	if (found_dec_point == 1 && str[i] == 'f' && str[i + 1] == '\0')
 		return 1;
+	// it's double
+	if (str[i] == '\0' && found_dec_point == 1)
+		return 1;
+	// it's int
 	if (str[i] == '\0')
 		return 1;
 	else
@@ -90,7 +95,7 @@ int main(int argc, char **argv)
 {
 	if (argc != 2)
 	{
-		std::cout << "Needs one thing as argument, no more no less!" << std::endl;
+		std::cout << "Needs one thing as argument, no more no less, thank you :)" << std::endl;
 		return (1);
 	}
 	if (weird_type(argv[1]) == 1)
@@ -100,7 +105,7 @@ int main(int argc, char **argv)
 	bool is_ok = is_okay(argv[1]);
 	if (is_ok)
 	{
-		if (argv[1][1] == '\0' && is_char(argv[1][0]))
+		if ((argv[1][1] == '\0' && is_char(argv[1][0])) || (argv[1][0] == 0))
 		{
 			return 0;
 		}

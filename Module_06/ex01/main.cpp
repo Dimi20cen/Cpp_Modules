@@ -10,25 +10,21 @@ Data* deserialize(uintptr_t raw){
 }
 
 int	main(){
-	Data* data1 = new Data;
-	uintptr_t data2;
-	Data* data3 = new Data;
+	Data		data1;
+	uintptr_t	raw;
 
-	data1->number = -42;
+	data1.number = -42;
 
+	raw = serialize(&data1);
+	Data *data2 = deserialize(raw);
 
-	std::cout << "[data1->number] = " << data1->number << std::endl;
-	data2 = serialize(data1);
-
-	// std::cout << data2 << std::endl;
-
-	data3 = deserialize(data2);
-	std::cout << "[data3->number] = " << data3->number << std::endl;
-
-
-	if (data3 == data1)
+	if (data2->number == data1.number)
 		std::cout << "EQUALS" << std::endl;
 	else
 		std::cout << "UNEQUALS" << std::endl;
+
+	std::cout << "[data1.number] = " << data1.number << std::endl;
+	std::cout << "[data2->number] = " << data2->number << std::endl;
+
 	return (0);
 }
